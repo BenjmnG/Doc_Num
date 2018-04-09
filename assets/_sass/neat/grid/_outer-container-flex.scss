@@ -1,0 +1,8 @@
+@mixin outer-container_flex {
+  @include clearfix;
+  max-width: 50vw;
+  margin: {
+    left: 0;
+    right: 0;
+  }
+}

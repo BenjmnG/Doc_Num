@@ -1,0 +1,11 @@
+permalink: pretty
+highlighter: rouge
+url: 
+
+collections:
+  - plays
+
+markdown: kramdown
+
+sass:
+    sass_dir: assets/_sass

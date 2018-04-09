@@ -1,0 +1,887 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+// Colors
+$dark:       #333; // gray-dark
+$white:        white; // primary-alt-darkest
+$light:               #ffff84;
+
+// Fonts
+$serif:               "Spectral", serif;
+$sans-serif:          "SpaceMono", sans-serif;
+
+// Font size
+$size:                1.3em;
+$sizemobile:          16px;
+$line-height:                2em;
+$line-heightmobile:          30px;
+
+// Mobile Breakpoints
+$mobile: new-breakpoint(min-width 0px max-width 640px 4);
+$slimmer: new-breakpoint(min-width 641px max-width 980px 12);
+
+::-moz-selection {
+    background-color: $dark;
+    color: $light;
+}
+
+* {
+    text-rendering: optimizeLegibility;
+}
+
+@media screen {
+  body {
+    background: $light;
+    font-family: $serif;
+    margin: 0;
+    line-height: 1.5em;
+  }
+
+
+
+  body#techfar_landing_page {
+    background: $dark;
+  }
+
+  a {
+    color: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+  }
+
+  a.anchor_offset {
+    display: block;
+    position: relative;
+    top: -60px;
+    visibility: hidden;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+
+  ol, ul {
+    list-style-type: decimal;
+    list-style-position: inside;
+    li {
+      margin: 1em 0;
+      color: $dark;
+    }
+  }
+
+  h1 {
+    font-size: 52px;
+    font-weight: 700;
+    //border-bottom: 1px solid $light;
+    padding-bottom: 0.25em;
+    margin-bottom: 20px;
+    line-height: 1.375em;
+    @include media($mobile){
+      font-size: 28px;
+    }
+  }
+
+  h2 {
+    font-family: $serif;
+    font-size: 30px;
+    line-height: 1.375em;
+    font-weight: 300;
+  }
+
+  h2.display {
+    font-family: $serif;
+    font-size: 54px;
+    line-height: 1.3em;
+    font-weight: 700;
+    margin-top: 0;
+    color: $dark;
+    @include media($mobile) {
+      font-size: 32px;
+    }
+  }
+
+  h3 {
+    font-family: $serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  h4 {
+    font-family: $serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5em;
+    color: $white;
+    margin-bottom: 0;
+  }
+
+  h6 {
+    font-family: $sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5em;
+    margin-bottom: 15px;
+  }
+
+  p {
+    color: $dark;
+    font-weight: 500;
+    font-size: 1.3em;
+    line-height: 2em;
+  }
+
+ //#plays_index, #introduction {
+    .outer_container {
+      @include outer-container();
+      padding: 40px;
+
+      @include media($mobile) {
+        padding: 20px;
+      }
+    }
+ // }
+
+  #plays.side_closed {
+      @include outer-container();
+      padding: 20px;
+
+      @include media($mobile) {
+      margin: {
+        left: 0;
+        right: 0;
+        }
+      }
+
+  }
+
+  #plays.side_opened {
+      max-width: 50vw;
+      margin: {
+        left: 0;
+        right: 0;
+        }
+      @include media($mobile) {
+      max-width: inherit;
+
+      }
+
+    }
+
+  .side_container  {
+    width: 50vw;
+    max-width: 50vw;
+    height: 100vh;
+    margin: {
+      left: 0;
+      right: 0;
+    }
+    background: $light;
+    border-left: 1px solid $dark;
+
+      @include media($mobile) {
+        padding: 20px;
+        width: 100vw;
+        height: 33vh;
+        border-left: 0;
+        border-top: 1px solid $dark;
+        max-width: 100vw;
+        overflow-y: scroll;
+        bottom: 0;
+            }
+  }
+    .side_container.side_opened{
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
+
+      @include media($mobile) {
+        top: inherit;
+        bottom: 0;
+        right: inherit;
+        width: 100vw;
+        overflow-x: hidden;   
+      }
+
+    }
+
+    .side_container.side_closed{
+      position: fixed;
+      top: 0;
+      right: -50vw;
+      z-index: -1;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+
+      @include media($mobile) {
+        top: inherit;
+        bottom: -33vh;
+        right: inherit;   
+      }
+    }
+
+  .referenced{
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  .ExitRef {
+    height: 15px;
+    width: 15px;
+  }
+
+  //}
+
+
+  .inner_container {
+    @include shift(1);
+    @include span-columns(10);
+
+    @include media($mobile) {
+      @include shift(0);
+      @include span-columns(4);
+    }
+
+    @include media($slimmer) {
+      @include shift(0);
+      @include span-columns(12);
+    }
+  }
+
+  sup a {
+      text-decoration: none !important;
+  }
+
+  .footnote{
+    border: 1px solid $dark;
+    border-radius: 100px;
+    width: 15px;
+    height: 15px;
+    //font-size: 15px;
+    bottom: 5px;
+    background-color: $dark;
+    font-size: 0px;
+    position: relative;
+    bottom: 7px;
+    left: 2px;
+    right: 2px;
+  }
+
+  .footnotes {
+    display: none;
+  }
+
+  .reversefootnote{
+    display: none;
+  }
+
+  #side li:first-child{
+    list-style: none;
+  }
+
+  .sideClose{
+    position: absolute;
+    cursor: pointer;
+    font-family: "SpaceMono", sans-serif;
+    transform: rotate(-90deg);
+    top: 30px;
+    float: right;
+    left: -50px;
+    transform-origin: top right;
+
+    @include media($mobile) {
+    transform: rotate(0deg);
+    transform-origin: inherit;
+    left: -15px;
+    top: 5px;
+    text-align: center;
+    width: 100vw;
+    border-bottom: 1px solid $dark;
+    }
+
+    p{
+      display: inline;
+      padding: 0;
+      margin: 0;
+      font-size: 14px
+    }
+
+    img{
+      width: 15px;
+      height: 15px;
+    }
+    span{
+    display: none;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: $dark;
+    border: 1px solid $dark;
+    border-radius: 30px;
+   }
+
+  }
+
+    .sideClose.mobile{
+      display: none;
+
+      @include media($mobile) {
+      display: block;
+      left: 20px;
+      top: inherit;
+      text-align: center;
+      width: 100vw;
+      position: relative;
+      border-bottom: inherit;
+      border-top: 1px solid #333;
+      padding: 5px 0;
+      bottom: 0px;
+      position: relative;
+      }
+    }
+  .button {
+    font-size: 17px;
+    font-family: $sans-serif;
+    font-weight: 700;
+    line-height: 1.5em;
+    display: inline-block;  
+    margin-top: 40px;
+    margin-right: 20px;
+
+    a {
+      display: inline-block;
+      border-radius: 3px;
+      padding: 10px 20px;
+      text-decoration: none;
+      border: 2px solid $light;
+      min-width: 172px;
+      text-align: center;
+    }
+    a:hover {
+      background: $light;
+      color: $dark;
+      text-decoration: none;
+    }
+    @include media($mobile) {
+      margin-top: 20px;
+      display: block;
+      margin-right: 0;
+      text-align: left;
+    }
+  }
+  /*
+  #alpha_tag {
+    float: right;
+    background: green;
+    color: $light;
+    padding: 10px;
+    font-family: $sans-serif;
+  }*/
+
+
+  #introduction {
+    background: $dark;
+    color: $light;
+    padding-bottom: 60px;
+    z-index: 3;
+    position: relative;
+
+    a {
+      text-decoration: underline;
+    }
+
+    a:hover {
+      background: $light;
+      color: $dark;
+    }
+
+    #Logotype {
+      display: inline-block;
+      img {
+        max-height: 100%;
+        max-width: 100%;
+        width: 200px;
+      }
+    }
+    
+    #Logotype:hover {
+      background: none;
+      opacity: 0.7;
+    }
+
+    .button a {
+      text-decoration: none;
+    }
+
+    p {
+      max-width: 700px;
+      font-family: $serif;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 2.0em;
+      margin-top: 40px;
+
+      color: $light;
+    }
+
+    p.download_links {
+      font-size: $sizemobile;
+    }
+
+    @include media($mobile) {
+      p {
+        font-size: $sizemobile;
+        line-height: $line-heightmobile;
+        margin-top: 20px;
+      }
+      padding-bottom: 20px;
+    }
+  }
+
+  #navigation_bar {
+    visibility: hidden;
+    display: none;
+    position: fixed;
+    width: 50px;
+    height: 0;
+    background: $light;
+    color: $light;
+    border-right: 1px solid $dark;
+    z-index: 999;
+    transition-duration: 0.2s;
+
+    .outer_container {
+      padding: 0 40px;
+    }
+
+    h3 {
+      position: fixed;
+      transform-origin: top right;
+      padding: 10px 10px 0 0;
+      margin-top: 0;
+      font-weight: 300;
+      color: $dark;
+      font-family: $sans-serif;
+      font-size: 14px;
+      text-align: right;
+      display: inline;
+      width: 190px;
+      left: -190px;
+      transform: rotate(-90deg);
+
+    }
+    h3:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      list-style-position: outside;
+      bottom: 0;
+      position: absolute;
+      margin: 0;
+      padding: 0 0 0 5px;
+      width: 25px;
+      text-align: center;
+    }
+
+    .active {
+      a {
+        background: $dark;
+        color: $light;
+        text-decoration: none;
+      }
+    }
+
+    li {
+      display: inline;
+      margin-left: inherit;
+      list-style-type: none;
+
+      a {
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        line-height: 22px;
+        text-align: center;
+        font-family: $serif;
+        font-weight: lighter;
+        color: $dark;
+        border: 1px solid $dark;
+        border-radius: 30px;
+        margin-bottom: 10px; 
+        font-size: 1.3em;     
+      }
+      a:hover {
+        background: $light;
+        color: $light;
+        text-decoration: none;
+        border: 2px solid #323A45;
+      }
+    }
+    
+    #menu_icon {
+      height: 14px;
+      width: 16px;
+      margin-bottom: 16px;
+      float: right;
+      color: $dark;
+      font-family: $sans-serif;
+      display: inline;
+      margin-left: 3px;
+      a {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+
+      .plays_index_anchor{
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    @include media($mobile) {
+      ul {
+        display: none;
+      }
+      
+      #menu_icon {
+        display: inline-block;
+      }
+      .outer_container {
+        padding: 0 20px;
+      }
+      h3 {
+        font-size: $sizemobile;
+        line-height: $line-heightmobile;
+        padding: 5px;
+        transform: rotate(0deg);
+        width: 100vw;
+        height: inherit;
+        position: absolute;
+        transform-origin: center;
+        right: inherit;
+        left: inherit;
+        text-align: center;
+        margin: inherit;
+      }
+    }
+
+    @include media($slimmer) {
+      ul { 
+        display: none;
+      }
+      #menu_icon {
+        display: inline-block;
+        margin-top: 20px;
+        height: 18px;
+        width: 20px;
+      }
+    }
+  }
+
+  #navigation_bar.show {
+    visibility: visible;
+    display: block;
+    height: 100%;
+    left: 0;
+    
+    @include media($mobile) {
+      visibility: visible;
+      display: block;
+      width: 100vw;
+      height: 30px;
+      border-bottom: 1px solid #333;
+      border-right: inherit;
+    }
+  }
+
+  #plays_index {
+    background: $light;
+    padding-bottom: 60px;
+    color: $dark;
+    border-bottom: 1px solid $dark;
+    z-index: 3;
+    position: relative;
+    font-size: 1.3em;
+    line-height: 2em;
+
+    ::selection {
+      color: $light;
+      background: $dark;
+    }
+
+    h2 { 
+      margin-bottom: 38px;
+    }
+    
+    .columns {
+      -moz-column-count: 2;
+      -moz-column-gap: 20px;
+      -webkit-column-count: 2;
+      -webkit-column-gap: 20px;
+      column-count: 2;
+      column-gap: 20px;
+    }
+
+    ol {
+      list-style-position: inside;
+      padding-left: 0px;
+      margin-top: 0px;
+
+      a {
+        vertical-align: top;
+        color: $dark;
+        margin-top: 0;
+        display: inline-block;
+        width: 85%;
+      }
+    }
+    
+    ol, li {
+      font-weight: 300;
+      margin: 0;
+      color: $dark;
+    }
+
+    li {
+      padding-bottom: 20px;
+    }
+    
+    .button {
+      a {
+        color: $dark;
+        border: 2px solid $dark;
+      }
+      a:hover {
+        color: $light;
+        background-color: $dark;
+        border: 2px solid $dark;
+      }
+    }
+
+    @include media($mobile) {
+      h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      ol, li {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      padding-bottom: 20px;
+    }
+
+    @include media($slimmer) {
+      .columns {
+        -moz-column-count: 1;
+        -moz-column-gap: 0px;
+        -webkit-column-count: 1;
+        -webkit-column-gap: 0px;
+        column-count: 1;
+        column-gap: 00px;
+      }
+    }
+
+     @include media($mobile) {
+      .columns {
+        -moz-column-count: 1;
+        -moz-column-gap: 0px;
+        -webkit-column-count: 1;
+        -webkit-column-gap: 0px;
+        column-count: 1;
+        column-gap: 00px;
+      }
+    }
+  }
+
+  #plays, /*#techfar*/ {
+
+    ::selection {
+      color: $light;
+      background: $dark;
+    }
+
+
+    h2, h3 {
+      @include span-columns(8);
+    }
+    h3 {
+      // margin-top: 0px;
+      color: $dark;
+    }
+
+    h2 {
+      margin-bottom: 24px;
+    }
+
+    p {
+      @include span-columns(9);
+    }
+
+    ol, ul {
+      @include span-columns(8);
+      list-style-position: outside;
+      padding-left: 25px;
+    }
+
+    ol {
+      //list-style-image: url("../images/bullet-sq.svg");
+      margin-top: 0px;
+    }
+
+    li {
+      padding-left: 5px;
+      font-size: 0.9m;
+      line-height: 1.5em;
+    }
+
+    ul {
+      //list-style-image: url("../images/bullet-circle.svg");
+    }
+
+    a {
+      color: $dark;
+      text-decoration: underline;
+      text-decoration-style: inherit;
+      display: inline-block;
+    }
+
+    a:visited {
+      color: $dark;
+      text-decoration-style: dotted;
+    }
+
+    @include media($mobile) {
+
+      p {
+        font-size: $sizemobile;
+        line-height: $line-heightmobile;
+      }
+      ol, li {
+        font-size: $sizemobile;
+        line-height: $line-heightmobile;
+      }
+
+      h2, h3, p, ol, ul {
+        @include span-columns(4);
+      }
+    }
+
+    @include media($slimmer) {
+      h2, h3 {
+        @include span-columns(9);
+      }
+      p {
+        @include span-columns(10);
+      }
+    }
+  }
+  /*
+  #techfar {
+    em {
+      font-size: 12px;
+      // margin-right: 5px;
+      line-height: 0;
+      vertical-align: super;
+    }
+    h2, h4 {
+      margin-top: 20px;
+    }
+    img {
+      max-width: 100%;
+    }
+  }*/
+}
+
+
+#colophons{
+  border-top: 1px solid $dark;
+  background-color: $dark;
+  color: $light;
+
+  .outer_container{
+    padding: inherit;
+    margin-left: 100px;
+    padding-bottom: 30px;
+  }
+
+  h1{
+    font-size: $size;
+    line-height: $line-height;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  p{
+    color: $light;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+
+
+@media print {
+  body {
+    background: white;
+    font-family: $serif;
+    font-weight: lighter;
+    line-height: 1.5em;
+    font-size: 12px;
+    margin-left: 16.5%;
+    margin-right: 16.5%
+  }
+
+  #plays_index {
+    ol {
+      list-style-type: decimal;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+
+  #navigation_bar {
+    display: none;
+  }
+
+  a {
+    color: $dark;
+    text-decoration: underline;
+  }
+
+  ol, ul {
+    width: 80%;
+  }
+  
+  ol {
+    list-style-type: square;
+  }
+
+  p {
+    width: 100%;
+  }
+
+  h2, h4 {
+    width: 66%;
+  }
+
+  h2 {
+    margin-top: 0px;
+  }
+
+  h5 {
+    margin-top: 60px;
+    margin-bottom: 0px;
+  }
+
+  .button {
+    display: none;
+  }
+}
+

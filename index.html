@@ -1,0 +1,108 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document Numerique</title>
+  <meta charset='UTF-8'/>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+  <link rel='shortcut icon' href='{{site.baseurl}}/assets/images/favicon.ico' type='image/x-icon' />
+  <link rel="icon" type="image/png" href="{{site.baseurl}}/assets/images/favicon.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="{{site.baseurl}}/assets/images/favicon.png" sizes="16x16" />
+  <link href='{{site.baseurl}}/assets/css/styles.css' rel='stylesheet' />
+  <link href='assets/font/Spectral/stylesheet.css' rel='stylesheet' type='text/css'>
+  <link href='assets/font/SpaceMono/stylesheet.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<div id="navigation_bar">
+   <div class="">
+    <div class="inner_container">
+
+      <a href="#introduction"><h3>Document Numerique</h3></a>
+      <ul class="nav">
+          <div id="menu_icon">
+              <a class="plays_index_anchor" href="#plays_index_anchor" title="Return to Index"><img src="/assets/images/bullet-close.svg"></a>
+          </div>
+
+        {% for play in site.plays %}
+          <li class="play_square"><a href="#play{{ play.play_number }}" title="View Play {{ play.play_number }}: {{ play.title }}"></a></li>
+        {% endfor %}
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+<div id="introduction">
+  <div class="outer_container">
+    <div class="inner_container">
+      <a id="usds_logo" href="" title="Link to...">a sign...</a>
+      {% capture introduction %}{% include introduction.md %}{% endcapture %}
+      {{ introduction | markdownify }}
+      <div class="button">
+        <a href="#plays_index_anchor" title="Accéder aux sections">Accéder aux sections</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="plays_index">
+  <div class="outer_container">
+    <div class="inner_container">
+      <a class="anchor_offset" id="plays_index_anchor"></a>
+      <h2>Sommaire</h2>
+      <div class="columns">
+        <ol>
+        {% for play in site.plays %}
+          <li><a href="#play{{ play.play_number }}" title="Voir la section {{ play.play_number }}">{{ play.title }}</a></li>
+        {% endfor %}
+        </ol>
+      </div>
+      <div class="button">
+        <a href="#play1" title="View the In Detail">In detail</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="plays" class="outer_container side_closed">
+  {% for play in site.plays %}
+    <div class="inner_container">
+      <a class="anchor_offset" id="play{{ play.play_number }}"></a>
+      <h6>Section {{ play.play_number }}</h6>
+      <h2 class="display">{{ play.title }}</h2>
+
+      {{ play.output }}
+    </div>
+  {% endfor %}
+</div>
+
+<div id="side" class="side_container side_closed">
+    <div class="sideClose"><span>X</span> <img src="/assets/images/bullet-close.svg"> <p>Close</p></div>
+    <div class="inner_container">
+      <h6>Title</h6>
+      {% capture SideContent %}
+      {% include techfar-online.md %}
+      {% endcapture %}
+      {{ SideContent | markdownify }}
+    </div>
+    <div class="sideClose mobile"><span>X</span> <img src="/assets/images/bullet-close.svg"> <p>Close</p></div>
+</div>
+
+<div id="colophons">
+  <div class="outer_container">
+      {% capture colophon %}{% include colophon.md %}{% endcapture %}
+      {{ colophon | markdownify }}
+  </div>
+</div>
+
+<script src='{{site.baseurl}}/assets/js/jquery-1.11.1.min.js'></script>
+<script src='{{site.baseurl}}/assets/js/scrollspy.js'></script>
+<script src='{{site.baseurl}}/assets/js/site.js'></script>
+<script src='{{site.baseurl}}/assets/js/base.js'></script>
+
+</body>
+</html>
