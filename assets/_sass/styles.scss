@@ -35,13 +35,8 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     background: $light;
     font-family: $serif;
     margin: 0;
-    line-height: 1.5em;
-  }
-
-
-
-  body#techfar_landing_page {
-    background: $dark;
+    line-height: $line-height;
+    overflow-x: hidden;
   }
 
   a {
