@@ -768,7 +768,7 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     }
 
     code{
-      @include span-columns(9);
+      //@include span-columns(12);
     }
 
     ol, ul {
