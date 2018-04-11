@@ -141,22 +141,16 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     font-size: smaller;
   }
 
- //#plays_index, #introduction {
-    .outer_container {
-      @include outer-container();
-      padding: 40px;
-
-      @include media($mobile) {
-        padding: 20px;
-      }
-    }
- // }
-
   #plays.side_closed {
+
+        max-width: calc(50vw - 30px);
+        margin-left: 30px;
+
       @include outer-container();
       padding: 20px;
 
       @include media($mobile) {
+      max-width: inherit;
       margin: {
         left: 0;
         right: 0;
@@ -167,22 +161,31 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
       margin-left: 30px;
       }
       @include media($fitter) {
-      margin-left: 30px;
+      //margin-left: 30px;
       }
   }
 
   #plays.side_opened {
+      /*
       max-width: 50vw;
       margin: {
         left: 0;
         right: 0;
-        }
+        }*/
+
+        max-width: calc(50vw - 30px);
+        margin-left: 30px;
+
       @include media($mobile) {
       max-width: inherit;
-
+      margin: {
+        left: 0;
+        right: 0;
+        }
       }
+
       @include media($fitter) {
-      max-width: inherit;
+      //max-width: inherit;
       }
     }
 
@@ -251,10 +254,8 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     width: 15px;
   }
 
-  //}
-
-
   .inner_container {
+    float: left;
     @include shift(1);
     @include span-columns(10);
 
@@ -267,6 +268,42 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
       @include shift(0);
       @include span-columns(12);
       margin-left: inherit;
+    }
+  }
+
+  .outer_container {
+    //@include outer-container();
+    float: left
+    padding: 40px;
+
+    @include media($mobile) {
+      padding: 20px;
+    }
+  }
+#plays.outer_container {
+    //@include outer-container();
+    float: left
+    padding: 40px;
+
+    @include media($mobile) {
+      padding: 20px;
+    }
+  }
+
+#plays.inner_container {
+    float: left;
+    //@include shift(1);
+    //@include span-columns(10);
+
+    @include media($mobile) {
+      //@include shift(0);
+      //@include span-columns(4);
+    }
+
+    @include media($slimmer) {
+      //@include shift(0);
+      //@include span-columns(12);
+      //margin-left: inherit;
     }
   }
 
@@ -786,8 +823,9 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
 
     li {
       padding-left: 5px;
-      font-size: 0.9em;
-      line-height: 1.5em;
+      font-size: $size;
+      line-height: $line-height;
+      margin: 0em 0 1em 2em;
     }
 
     ul {
