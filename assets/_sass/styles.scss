@@ -266,15 +266,16 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     }
   }
 
-#introduction.outer_container, #plays_outer.inner_container {
+  #introduction.outer_container, #plays_index.outer_container {
     @include outer-container();
+    float: left;
     padding: 40px;
 
     @include media($mobile) {
       padding: 20px;
     }
   }
-
+  
 #plays.outer_container {
     //@include outer-container();
     float: left;
