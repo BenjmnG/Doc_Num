@@ -251,7 +251,6 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
 
 #plays_index, #introduction {
     .inner_container {
-      float: left;
       @include shift(1);
       @include span-columns(10);
 
@@ -267,11 +266,10 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
       }
     }
   }
-  
+
 #plays_index, #introduction {
     .outer_container {
       @include outer-container();
-      float: left;
       padding: 40px;
 
       @include media($mobile) {
