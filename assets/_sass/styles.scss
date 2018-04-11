@@ -249,7 +249,7 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     width: 15px;
   }
 
-  .inner_container {
+  #introduction.inner_container, #plays_index.inner_container {
     float: left;
     @include shift(1);
     @include span-columns(10);
@@ -266,15 +266,15 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     }
   }
 
-  .outer_container {
-    //@include outer-container();
-    float: left;
+#introduction.outer_container, #plays_outer.inner_container {
+    @include outer-container();
     padding: 40px;
 
     @include media($mobile) {
       padding: 20px;
     }
   }
+
 #plays.outer_container {
     //@include outer-container();
     float: left;
