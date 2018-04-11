@@ -249,6 +249,7 @@ $slimmer: new-breakpoint(min-width 641px max-width 980px 12);
     @include media($slimmer) {
       @include shift(0);
       @include span-columns(12);
+      margin-left: inherit;
     }
   }
 

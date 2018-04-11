@@ -216,7 +216,8 @@
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 100%; }
+      width: 100%;
+      margin-left: inherit; }
       .inner_container:last-child {
         margin-right: 0; } }
 
