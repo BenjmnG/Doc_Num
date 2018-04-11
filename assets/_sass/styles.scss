@@ -80,7 +80,8 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     padding-bottom: 0.25em;
     margin-bottom: 20px;
     line-height: 1.375em;
-    @include media($mobile){
+
+    @include media($mobile) {
       font-size: 28px;
     }
   }
@@ -769,6 +770,7 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
 
     .highlight{
       @include span-columns(9);
+      @include word-wrap();
     }
 
     ol, ul {
