@@ -249,7 +249,7 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     width: 15px;
   }
 
-  #introduction.inner_container, #plays_index.inner_container {
+  .inner_container {
     float: left;
     @include shift(1);
     @include span-columns(10);
@@ -266,7 +266,7 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     }
   }
 
-  #introduction.outer_container, #plays_index.outer_container {
+  .outer_container {
     @include outer-container();
     float: left;
     padding: 40px;
@@ -275,8 +275,8 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
       padding: 20px;
     }
   }
-  
-#plays.outer_container {
+
+  #plays .outer_container {
     //@include outer-container();
     float: left;
     padding: 40px;
@@ -286,7 +286,7 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     }
   }
 
-#plays.inner_container {
+  #plays .inner_container {
     float: left;
     //@include shift(1);
     //@include span-columns(10);
