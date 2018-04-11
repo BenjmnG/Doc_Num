@@ -134,6 +134,12 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     line-height: 2em;
   }
 
+  code{
+    font-family: $sans-serif;
+    font-style: italic;
+    font-size: smaller;
+  }
+
  //#plays_index, #introduction {
     .outer_container {
       @include outer-container();
