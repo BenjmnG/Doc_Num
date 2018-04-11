@@ -249,30 +249,34 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     width: 15px;
   }
 
-  .inner_container {
-    float: left;
-    @include shift(1);
-    @include span-columns(10);
+#plays_index, #introduction {
+    .inner_container {
+      float: left;
+      @include shift(1);
+      @include span-columns(10);
 
-    @include media($mobile) {
-      @include shift(0);
-      @include span-columns(4);
-    }
+      @include media($mobile) {
+        @include shift(0);
+        @include span-columns(4);
+      }
 
-    @include media($slimmer) {
-      @include shift(0);
-      @include span-columns(12);
-      margin-left: inherit;
+      @include media($slimmer) {
+        @include shift(0);
+        @include span-columns(12);
+        margin-left: inherit;
+      }
     }
   }
+  
+#plays_index, #introduction {
+    .outer_container {
+      @include outer-container();
+      float: left;
+      padding: 40px;
 
-  .outer_container {
-    @include outer-container();
-    float: left;
-    padding: 40px;
-
-    @include media($mobile) {
-      padding: 20px;
+      @include media($mobile) {
+        padding: 20px;
+      }
     }
   }
 
