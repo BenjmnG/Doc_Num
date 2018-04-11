@@ -395,6 +395,17 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     z-index: 3;
     position: relative;
 
+
+    ::selection {
+        background-color: $light;
+        color: $dark;
+    }
+
+    ::-moz-selection {
+        background-color: $light;
+        color: $dark;
+    }
+
     a {
       text-decoration: underline;
     }
@@ -416,6 +427,20 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     #Logotype:hover {
       background: none;
       opacity: 0.7;
+    }
+
+    h1{
+    font-size: 80px;
+    letter-spacing: -0.03em;
+    margin-top: 33vh;
+    line-height: 70px;
+
+      @include media($mobile) {
+      font-size: inherit;
+      margin-top: inherit;
+      line-height: inherit;
+      }
+
     }
 
     .button a {
@@ -651,6 +676,8 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
       font-weight: 300;
       margin: 0;
       color: $dark;
+      font-style: normal;
+
     }
 
     li {
