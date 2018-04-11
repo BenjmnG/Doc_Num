@@ -19,6 +19,7 @@ $line-heightmobile:          30px;
 // Mobile Breakpoints
 $mobile: new-breakpoint(min-width 0px max-width 640px 4);
 $slimmer: new-breakpoint(min-width 641px max-width 980px 12);
+$fitter: new-breakpoint(min-width 981px max-width 1280px 12);
 
 ::-moz-selection {
     background-color: $dark;
@@ -167,6 +168,10 @@ $slimmer: new-breakpoint(min-width 641px max-width 980px 12);
 
       }
 
+      @include media($fitter) {
+      max-width: inherit;
+
+      }
     }
 
   .side_container  {
