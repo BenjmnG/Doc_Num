@@ -39,7 +39,7 @@
 <div id="introduction">
   <div class="outer_container">
     <div class="inner_container">
-      <a id="usds_logo" href="" title="Link to...">a sign...</a>
+      <!--<a id="Logotype" href="" title="Link to...">a sign...</a>-->
       {% capture introduction %}{% include introduction.md %}{% endcapture %}
       {{ introduction | markdownify }}
       <div class="button">
@@ -81,11 +81,11 @@
 </div>
 
 <div id="side" class="side_container side_closed">
-    <div class="sideClose"><span>X</span> <img src="/assets/images/bullet-close.svg"> <p>Close</p></div>
+    <div class="sideClose"><span>X</span> <img src="{{site.baseurl}}/assets/images/bullet-close.svg"> <p>Close</p></div>
     <div class="inner_container">
       <h6>Title</h6>
     </div>
-    <div class="sideClose mobile"><span>X</span> <img src="/assets/images/bullet-close.svg"> <p>Close</p></div>
+    <div class="sideClose mobile"><span>X</span> <img src="{{site.baseurl}}/assets/images/bullet-close.svg"> <p>Close</p></div>
 </div>
 
 <div id="colophons">

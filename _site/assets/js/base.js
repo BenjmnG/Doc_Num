@@ -61,7 +61,7 @@
        .end()  //again go back to selected element
        .text() //get the text
        .replace(/↩/i, ''); // Erase ↩ glyphe
-      var ExitRef = '<img src="/assets/images/bullet-close.svg" class="ExitRef">'
+      var ExitRef = '<img src="{{site.baseurl}}/assets/images/bullet-close.svg" class="ExitRef">'
 
       /*$ (this).parent()
       .text(" " + getSerialContenttoRef+ " ") // Insert Text Reference
