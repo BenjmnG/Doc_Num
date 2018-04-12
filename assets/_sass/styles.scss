@@ -196,6 +196,10 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     left: -50px;
     transform-origin: top right;
 
+    @include media($slimmer) {
+      left: -65px;
+    }
+
     @include media($mobile) {
     transform: rotate(0deg);
     transform-origin: inherit;
@@ -288,8 +292,9 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
 
       @include media($slimmer) {
         @include shift(0);
-        @include span-columns(12);
         margin-left: inherit;
+        max-width: 80vw;
+
       }
     }
 
@@ -664,6 +669,12 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     overflow-y: scroll;
     overflow-x: hidden;
 
+    @include media($slimmer) {
+    width: 65vw;
+    max-width: 65vw;
+    padding: 0 20px 0 40px;
+    }
+
       @include media($mobile) {
         padding: 10px;
         width: 100vw;
@@ -700,6 +711,10 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
       z-index: -1;
       transition-duration: 0.3s;
       transition-timing-function: ease-in-out;
+
+      @include media($slimmer) {
+      right: -65vw;
+      }
 
       @include media($mobile) {
         top: inherit;
