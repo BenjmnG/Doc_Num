@@ -47,6 +47,8 @@
     var Serial = PreSerial.replace("#","");
     var getSerial = document.getElementById(Serial);
 
+    var url = document.location.host
+
     //  alert(Serial)
      //   alert(firstDivContent);
     

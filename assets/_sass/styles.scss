@@ -21,6 +21,11 @@ $mobile: new-breakpoint(min-width 0px max-width 640px 4);
 $slimmer: new-breakpoint(min-width 641px max-width 980px 12);
 $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
 
+::selection {
+    background-color: $dark;
+    color: $light;
+}
+
 ::-moz-selection {
     background-color: $dark;
     color: $light;
@@ -136,108 +141,6 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     font-size: smaller;
   }
 
-  #plays.side_closed {
-        max-width: calc(50vw - 30px);
-        margin-left: auto;
-        margin-right: auto;
-
-      //@include outer-container();
-      //padding: 20px;
-
-      @include media($mobile) {
-      max-width: inherit;
-      margin: {
-        left: 0;
-        right: 0;
-        }
-      }
-
-      @include media($slimmer) {
-      margin-left: 30px;
-      }
-      @include media($fitter) {
-      //margin-left: 30px;
-      }
-  }
-
-  #plays.side_opened {
-      /*
-      max-width: 50vw;
-      margin: {
-        left: 0;
-        right: 0;
-        }*/
-
-        max-width: calc(50vw - 30px);
-        margin-left: 30px;
-
-      @include media($mobile) {
-      max-width: inherit;
-      margin: {
-        left: 0;
-        right: 0;
-        }
-      }
-
-      @include media($fitter) {
-      //max-width: inherit;
-      }
-    }
-
-  .side_container  {
-    width: 50vw;
-    max-width: 50vw;
-    height: 100vh;
-    margin: {
-      left: 0;
-      right: 0;
-    }
-    background: $light;
-    border-left: 1px solid $dark;
-
-      @include media($mobile) {
-        padding: 20px;
-        width: 100vw;
-        height: 33vh;
-        border-left: 0;
-        border-top: 1px solid $dark;
-        max-width: 100vw;
-        overflow-y: scroll;
-        bottom: 0;
-            }
-  }
-    .side_container.side_opened{
-      position: fixed;
-      top: 0;
-      right: 0;
-      z-index: 2;
-      transition-duration: 0.5s;
-      transition-timing-function: ease-in-out;
-
-      @include media($mobile) {
-        top: inherit;
-        bottom: 0;
-        right: inherit;
-        width: 100vw;
-        overflow-x: hidden;   
-      }
-
-    }
-
-    .side_container.side_closed{
-      position: fixed;
-      top: 0;
-      right: -50vw;
-      z-index: -1;
-      transition-duration: 0.3s;
-      transition-timing-function: ease-in-out;
-
-      @include media($mobile) {
-        top: inherit;
-        bottom: -33vh;
-        right: inherit;   
-      }
-    }
 
   .referenced{
     cursor: pointer;
@@ -247,62 +150,6 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
   .ExitRef {
     height: 15px;
     width: 15px;
-  }
-
-#plays_index, #introduction {
-    .inner_container {
-      @include shift(1);
-      @include span-columns(10);
-
-      @include media($mobile) {
-        @include shift(0);
-        @include span-columns(4);
-      }
-
-      @include media($slimmer) {
-        @include shift(0);
-        @include span-columns(12);
-        margin-left: inherit;
-      }
-    }
-  }
-
-#plays_index, #introduction {
-    .outer_container {
-      @include outer-container();
-      padding: 40px;
-
-      @include media($mobile) {
-        padding: 20px;
-      }
-    }
-  }
-
-  #plays .outer_container {
-    //@include outer-container();
-    float: left;
-    padding: 40px;
-
-    @include media($mobile) {
-      padding: 20px;
-    }
-  }
-
-  #plays .inner_container {
-    float: left;
-    //@include shift(1);
-    //@include span-columns(10);
-
-    @include media($mobile) {
-      //@include shift(0);
-      //@include span-columns(4);
-    }
-
-    @include media($slimmer) {
-      //@include shift(0);
-      //@include span-columns(12);
-      //margin-left: inherit;
-    }
   }
 
   sup a {
@@ -426,17 +273,37 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
       text-align: left;
     }
   }
-  /*
-  #alpha_tag {
-    float: right;
-    background: green;
-    color: $light;
-    padding: 10px;
-    font-family: $sans-serif;
-  }*/
+ 
+    .inner_container {
+      @include shift(1);
+      @include span-columns(10);
 
+      @include media($mobile) {
+        @include shift(0);
+        @include span-columns(4);
+      }
 
-  #introduction {
+      @include media($slimmer) {
+        @include shift(0);
+        @include span-columns(12);
+        margin-left: inherit;
+      }
+    }
+
+    .outer_container {
+      @include outer-container();
+      padding: 20px;
+
+      @include media($mobile) {
+        padding: 20px;
+      }
+
+      @include media($slimmer) {
+        margin-left: 30px;
+        }
+    }
+
+#introduction {
     background: $dark;
     color: $light;
     padding-bottom: 60px;
@@ -484,9 +351,9 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     line-height: 70px;
 
       @include media($mobile) {
-      font-size: inherit;
-      margin-top: inherit;
-      line-height: inherit;
+        font-size: 40px;
+        margin-top: inherit;
+        line-height: 35px;
       }
 
     }
@@ -520,7 +387,7 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     }
   }
 
-  #navigation_bar {
+#navigation_bar {
     visibility: hidden;
     display: none;
     position: fixed;
@@ -539,7 +406,7 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     h3 {
       position: fixed;
       transform-origin: top right;
-      padding: 10px 10px 0 0;
+      padding: 3px 10px 0 0;
       margin-top: 0;
       font-weight: 300;
       color: $dark;
@@ -779,16 +646,150 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     }
   }
 
-  #plays {
+
+  .side_container  {
+    width: 50vw;
+    max-width: 50vw;
+    height: 100vh;
+    margin: {
+      left: 0;
+      right: 0;
+    }
+    background: $light;
+    border-left: 1px solid $dark;
+
+      @include media($mobile) {
+        padding: 20px;
+        width: 100vw;
+        height: 33vh;
+        border-left: 0;
+        border-top: 1px solid $dark;
+        max-width: 100vw;
+        overflow-y: scroll;
+        bottom: 0;
+            }
+  }
+    .side_container.side_opened{
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
+
+      @include media($mobile) {
+        top: inherit;
+        bottom: 0;
+        right: inherit;
+        width: 100vw;
+        overflow-x: hidden;   
+      }
+
+    }
+
+    .side_container.side_closed{
+      position: fixed;
+      top: 0;
+      right: -50vw;
+      z-index: -1;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+
+      @include media($mobile) {
+        top: inherit;
+        bottom: -33vh;
+        right: inherit;   
+      }
+    }
+
+    #plays.side_closed {
+          max-width: calc(50vw - 30px);
+          margin-left: auto;
+          margin-right: auto;
+
+        @include media($mobile) {
+        max-width: calc(100vw - 30px);
+        margin: {
+          left: 30px;
+          //right: 0;
+          }
+        }
+
+        @include media($slimmer) {
+        margin-left: 30px;
+        max-width: calc(80vw - 30px);
+        }
+
+        @include media($fitter) {
+        //margin-left: 30px;
+        }
+    }
+
+    #plays.side_opened {
+          max-width: calc(50vw - 30px);
+          margin-left: 30px;
+
+        @include media($mobile) {
+        max-width: inherit;
+        margin: {
+          left: 0;
+          right: 0;
+          }
+        }
+
+        @include media($fitter) {
+        //max-width: inherit;
+        }
+      }
+
+#plays {
 
     ::selection {
       color: $light;
       background: $dark;
     }
 
+    .outer_container {
+      max-width: inherit;
+      margin: {
+        left: inherit;
+        right: inherit;
+      } 
+      float: left;
+      padding: 40px;
+
+      @include media($mobile) {
+        padding: 20px;
+      }
+    }
+
+    .inner_container {
+      margin-left: inherit;
+      float: left;
+      display: inherit;
+      margin-right: inherit;
+      width: 100%;
+
+      @include media($mobile) {
+      margin-left: inherit;
+      float: left;
+      display: inherit;
+      margin-right: inherit;
+      width: 100%;
+      }
+
+      @include media($slimmer) {
+      margin-left: inherit;
+      float: left;
+      display: inherit;
+      margin-right: inherit;
+      width: 100%;
+      }
+    }
+
 
     h2, h3, h4 {
-      @include span-columns(8);
+      @include span-columns(9);
     }
     h3, h4 {
       // margin-top: 0px;
@@ -803,15 +804,26 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
       @include span-columns(12);
     }
 
+    pre {
+       white-space: pre-wrap;       /* css-3 */
+       white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+       white-space: -pre-wrap;      /* Opera 4-6 */
+       white-space: -o-pre-wrap;    /* Opera 7 */
+       word-wrap: break-word;       /* Internet Explorer 5.5+ */
+
+       margin-left: 3em;
+        }
+
     .highlight{
       @include span-columns(12);
       @include word-wrap();
     }
 
     ol, ul {
-      @include span-columns(8);
+      @include span-columns(12);
       list-style-position: outside;
-      padding-left: 25px;
+      //padding-left: 25px;
+      padding-left: 0;
     }
 
     ol {
@@ -821,9 +833,12 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
 
     li, ol {
       padding-left: 5px;
+    }
+
+    li{
       font-size: $size;
       line-height: $line-height;
-      margin: 0em 0 1em 2em;
+      margin: 0 0 1em 3em;
     }
 
     ul {
@@ -854,24 +869,41 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
       }
 
       h2, h3, h4, p, ol, ul {
-        @include span-columns(4);
+       // @include span-columns(9);
+      }
+    }
+    @include media($fitter) {
+      h2, h3, h4, {
+        @include span-columns(12);
+      }
+
+      p {
+        @include span-columns(12);
       }
     }
 
     @include media($slimmer) {
       h2, h3, h4, {
-        @include span-columns(9);
-      }
-      p {
-        @include span-columns(10);
+        @include span-columns(12);
       }
     }
-  }
 
+  }
 }
 
 
 #colophons{
+
+  ::selection {
+      background-color: $light;
+      color: $dark;
+  }
+
+  ::-moz-selection {
+      background-color: $light;
+      color: $dark;
+  }
+
   border-top: 1px solid $dark;
   background-color: $dark;
   color: $light;
