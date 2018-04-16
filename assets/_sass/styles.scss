@@ -478,7 +478,17 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
       img{
         width: inherit;
       }
-    }
+
+        li.play_square{
+        list-style-image: url("../images/bullet-circle.svg");
+        }
+        li.index_anchor{
+        list-style-image: url("../images/bullet-close.svg");
+        }
+        li.contrast_icon{
+        list-style-image: url("../images/bullet-contrast.svg");
+        }
+      }
     
     #menu_icon {
       height: 14px;
