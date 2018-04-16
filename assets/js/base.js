@@ -123,7 +123,7 @@
 
 /* Calls */
 
-$("#contrast_icon_0001").toggle(
+$("#cButton_0001").toggle(
     function(){
       colorChange2();
     },
