@@ -32,15 +32,17 @@
 
       <a href="#introduction"><h3>Document numérique</h3></a>
       <ul class="nav">
-            <li class="index_anchor"><a class="plays_index_anchor" href="#plays_index_anchor" title="Returner au sommaire"><img src="{{site.baseurl}}/assets/images/bullet-close.svg"></a>
+            <li class="index_anchor"><a class="plays_index_anchor" href="#plays_index_anchor" title="Returner au sommaire">&nbsp;</a>
             </li>
 
         {% for play in site.plays %}
-          <li class="play_square"><a href="#play{{ play.play_number }}" title="Voir la section {{ play.play_number }}: {{ play.title }}"></a></li>
+          <li class="play_square">
+              <a href="#play{{ play.play_number }}" title="Voir la section {{ play.play_number }}: {{ play.title }}">&nbsp;</a>
+          </li>
         {% endfor %}
 
           <li class="contrast_icon">
-          <a href="" title="Améliorer le contraste"><img src="{{site.baseurl}}/assets/images/bullet-contrast.svg"></a>
+            <a href="" title="Améliorer le contraste">&nbsp;</a>
           </li>
       </ul>
     </div>
