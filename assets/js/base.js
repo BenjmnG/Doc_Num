@@ -9,6 +9,9 @@
         var footnotes = (document).getElementsByClassName("footnotes");
         var sideClose = (document).getElementsByClassName("sideClose");
         var Referenced = (document).getElementsByClassName("Referenced");
+     
+        var cButton = (document).getElementById("cButton_0001");
+        var html = document.getElementsByTagName('html')[0];
 
 /* Diseable Specefic a  link */
   $ (footnote).off("click");
@@ -112,26 +115,47 @@
             );
   };
 
-  function colorChange1(){
-    alert(colorchange)
-    $(document.body).css("--light", "#ffff84");
-    $(document.body).css("--dark", "#333");
-  };
-  function colorChange2(){
-    $(document.body).css("--light", "white");
-    $(document.body).css("--dark", "#333");
-  };
+  function colorChange1(){ // yellow
+      document.body.style.setProperty("--light", "#ffff84");
+      document.body.style.setProperty("--dark", "#333");
+    };
+
+  function colorChange2(){ //white
+      document.body.style.setProperty("--light", "white");
+      document.body.style.setProperty("--dark", "#333");  
+    };
+
+    function colorChange3(){ //black
+      document.body.style.setProperty("--light", "#333");
+      document.body.style.setProperty("--dark", "white");  
+    };
 
 /* Calls */
 
-$("#cButton_0001").toggle(
+
+
+  $(cButton_0001).click(
     function(){
-      colorChange2();
-    },
-    function(){
-      colorChange1();
+
+     //className = cButton.getAttribute("class") //pure JS Solution
+
+    if($(".cButton").hasClass('color1')) {
+      colorChange3();
+      $(".cButton").removeClass('color1');
+      $(".cButton").addClass('color3');
+
     }
-  );
+    else if($(".cButton").hasClass('color2')){
+      colorChange1();
+      $(".cButton").removeClass('color2');
+      $(".cButton").addClass('color1');    }
+
+    else{
+      colorChange2();
+      $(".cButton").removeClass('color3');
+      $(".cButton").addClass('color2');
+    };
+  });
 
   $(footnote).click(
       function() {

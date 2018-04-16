@@ -42,10 +42,16 @@
         {% for play in site.plays %}
           <li class="play_square"><a href="#play{{ play.play_number }}" title="Voir la section {{ play.play_number }}: {{ play.title }}"></a></li>
         {% endfor %}
+          <hr>
+        </ul>
+        <ul class="ctrst">
+          <li class="cButton color1" style="display:inline">
+            <a href="javascript:void(0)">
+           
+            <!--<img id="cButton_0001" src="{{site.baseurl}}/assets/images/bullet-contrast-01.svg">-->
 
-          <li class="cButton" style="display:inline">
-                <svg id="cButton_0001" viewBox="0 0 14 14" data-name="ee5db3e1-a6dd-42df-bf07-68cd702fff8a" xmlns="http://www.w3.org/2000/svg" style="display: inline;"><title>Contrast</title><path d="M7,0a7,7,0,1,0,7,7A7,7,0,0,0,7,0ZM1,7A6,6,0,0,1,7,1V13A6,6,0,0,1,1,7Z " style="display: inline;" />
-                </svg>
+            <svg id="cButton_0001" data-name="ee5db3e1-a6dd-42df-bf07-68cd702fff8a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><title>Contraste</title><path d="M7,0C3.1,0,0,3.1,0,7s3.1,7,7,7s7-3.1,7-7S10.9,0,7,0z M1,7c0-3.3,2.7-6,6-6v12C3.7,13,1,10.3,1,7z"/></svg>
+          </a>
           </li>
       </ul>
     </div>
@@ -78,7 +84,7 @@
         </ol>
       </div>
       <div class="button">
-        <a href="#play1" title="View the In Detail">En détail</a>
+        <a href="#play1" title="Voir en détail">En détail</a>
       </div>
     </div>
   </div>
@@ -97,7 +103,12 @@
 </div>
 
 <div id="side" class="side_container side_closed">
-    <div class="sideClose"><span>X</span> <img src="{{site.baseurl}}/assets/images/bullet-close.svg"> <p>Close</p></div>
+    <div class="sideClose"><span>X</span> 
+      <!--<img src="{{site.baseurl}}/assets/images/bullet-close.svg"> -->
+      <svg id="index_anchor_0002" viewBox="0 0 14 14" data-name="b74ec648-29e4-4aaf-a657-5e8a97fa58c8" xmlns="http://www.w3.org/2000/svg"><title>Close</title><path d="M7,0a7,7,0,1,0,7,7A7,7,0,0,0,7,0Zm.71,7,3.87-3.87a6,6,0,0,1,0,7.74Zm3.16-4.58L7,6.29,3.13,2.42a6,6,0,0,1,7.74,0Zm-8.45.71L6.29,7,2.42,10.87a6,6,0,0,1,0-7.74Zm.71,8.45L7,7.71l3.87,3.87a6,6,0,0,1-7.74,0Z"/>*/
+      </svg>
+      <p>Close</p>
+    </div>
     <div class="inner_container">
       <h6>Title</h6>
     </div>
