@@ -129,7 +129,7 @@ $(".contrast_icon").toggle(
     },
     function(){
       colorChange1();
-    };
+    }
   );
 
   $(footnote).click(
