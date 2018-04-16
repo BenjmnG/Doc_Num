@@ -112,9 +112,25 @@
             );
   };
 
+  function colorChange1(){
+    $(document.body).css("--light", "#ffff84");
+    $(document.body).css("--dark", "#333");
+  };
+  function colorChange2(){
+    $(document.body).css("--light", "white");
+    $(document.body).css("--dark", "#333");
+  };
+
 /* Calls */
 
-
+$(".contrast_icon").toggle(
+    function(){
+      colorChange2();
+    },
+    function(){
+      colorChange1();
+    };
+  );
 
   $(footnote).click(
       function() {
