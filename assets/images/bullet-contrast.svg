@@ -1,1 +1,12 @@
-<svg id="ee5db3e1-a6dd-42df-bf07-68cd702fff8a" data-name="b74ec648-29e4-4aaf-a657-5e8a97fa58ca" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><title>bullet-contrast</title><g id="908ced29-363c-4439-9e0b-005d44c9e12a" data-name="228efdef-19e7-41a8-8adb-6af89665a106"><g id="79337210-8549-4656-a965-c41ea011cc60" data-name="1a5266b4-3acc-4836-9e05-2d73f4f93271"><g id="242fe536-4868-49ed-9c9f-18b9d00b43c4" data-name="abf952bc-01b5-4af2-97b2-cbd051d72de1"><g id="c66480e4-deb0-4a2f-a634-3aa93bb1f021" data-name="984a0ee2-20dc-46e6-8698-adfba6af6166"><circle id="f7cd0367-6182-4db3-93a2-c2c74386445a" data-name="cae2bb45-e190-4e07-912e-273e57ef0894" cx="7" cy="7" r="6.5" style="fill:none;stroke:#231f20"/></g></g></g></g><path d="M7,13.51V.49S9.17.93,9.29,1s3.54,3,3.54,3l.46,3.38-.71,3L10,12.68Z" style="fill:#231f20"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="ee5db3e1-a6dd-42df-bf07-68cd702fff8a"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14"
+	 style="enable-background:new 0 0 14 14;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#231F20;}
+</style>
+<title>bullet-contrast</title>
+<path class="st0" d="M7,0C3.1,0,0,3.1,0,7c0,3.9,3.1,7,7,7c3.9,0,7-3.1,7-7C14,3.1,10.9,0,7,0z M1,7c0-3.3,2.7-6,6-6v12
+	C3.7,13,1,10.3,1,7z"/>
+</svg>

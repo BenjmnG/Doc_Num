@@ -496,11 +496,13 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     .contrast_icon {
         margin-top: -17px;
 
-        svg{
-          fill: var(--dark);
-        }
     }
-/*
+
+    svg.contrast_icon_0001, svg.index_anchor_0001{
+      fill: var(--dark);
+    }
+
+        /*
     #menu_icon {
       height: 14px;
       width: 16px;
