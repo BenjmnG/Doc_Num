@@ -837,7 +837,7 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     .highlight{
       @include span-columns(12);
       @include word-wrap();
-      width: inherit;
+      //width: inherit;
     }
 
     ol, ul {
