@@ -113,6 +113,7 @@
   };
 
   function colorChange1(){
+    alert(colorchange)
     $(document.body).css("--light", "#ffff84");
     $(document.body).css("--dark", "#333");
   };
