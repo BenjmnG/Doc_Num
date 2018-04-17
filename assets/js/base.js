@@ -165,7 +165,7 @@
         close_side();
     });
 
-    $('.referenced').click(
+    $('.referenced', '.ExitRef').click(
       function() {
         //alert('go');
         clearReference.call(this);
