@@ -66,7 +66,7 @@
        .end()  //again go back to selected element
        .text() //get the text
        .replace(/↩/i, ''); // Erase ↩ glyphe
-      var ExitRef = '<img src="/Doc_Num/assets/images/bullet-close.svg" class="ExitRef">'
+      var ExitRef = '<svg class="ExitRef" viewBox="0 0 14 14" data-name="b74ec648-29e4-4aaf-a657-5e8a97fa58ca" xmlns="http://www.w3.org/2000/svg"><title>Index</title><path d="M7,0a7,7,0,1,0,7,7A7,7,0,0,0,7,0Zm.71,7,3.87-3.87a6,6,0,0,1,0,7.74Zm3.16-4.58L7,6.29,3.13,2.42a6,6,0,0,1,7.74,0Zm-8.45.71L6.29,7,2.42,10.87a6,6,0,0,1,0-7.74Zm.71,8.45L7,7.71l3.87,3.87a6,6,0,0,1-7.74,0Z"/>'
 
       /*$ (this).parent()
       .text(" " + getSerialContenttoRef+ " ") // Insert Text Reference
@@ -137,20 +137,18 @@
   $(cButton_0001).click(
     function(){
 
-     //className = cButton.getAttribute("class") //pure JS Solution
-
     if($(".cButton").hasClass('color1')) {
       colorChange3();
       $(".cButton").removeClass('color1');
       $(".cButton").addClass('color3');
-
     }
+
     else if($(".cButton").hasClass('color2')){
       colorChange1();
       $(".cButton").removeClass('color2');
       $(".cButton").addClass('color1');    }
 
-    else{
+    else {
       colorChange2();
       $(".cButton").removeClass('color3');
       $(".cButton").addClass('color2');
