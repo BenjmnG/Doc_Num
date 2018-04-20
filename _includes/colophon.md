@@ -1,7 +1,10 @@
 # Colophon 
 
 Ce document est un document numérique.   
-Éditeur responsable&thinsp;: 
+Éditeur responsable&thinsp;: [Benjamin G.](http://benjmng.eu)
+
+Version 1.0, Mai 2018
+CC0 1.0 Universal
 
 <!-- TUTO 
 

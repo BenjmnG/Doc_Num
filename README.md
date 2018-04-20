@@ -1,1 +1,6 @@
-I try...
+##Principe de base
+
+Cette plateforme est ultra légère. Elle repose sur Jekyll, un générateur de site statique assez efficace. Sans rentrer dans les détails, à chaque connexion sur ce site, Jekyll s'occupe de mettre bout à bout les différents morceaux épars, s'assure que tel texte est bien à tel endroit, que sa syntaxe et sa composition épousent bien les prérequis attendus. 
+L'avantage est ici de pouvoir construire un espace au plus près de nos besoins, avec un poids limité (l'ensemble des fichiers du site accaparent moins de 10mo, pour l'utilisateur seulement 221,95 Ko sont nécessaire à l'affichage de la page) et un nombre de dépendances restreintes. Ainsi l'ensemble de cette archetiecture numérique, peut être comprise et maitrisé en un rien de temps.
+Cette légèreté induit un avantage indéniable, celui que cette plateforme puisse être hébergée sur Github facilement et gratuitement. Ce choix est fait pour éluder le problème d'hébergement que rencontrent les petites structures (associations, initiative citoyenne, créateur, étudiant-chercheur).
+Je précise à ce stade que tel approche n'est en rien originale. Elle reprend d'ailleurs un bon nombre de composants et bout de code libre de droits piochés à droite et à gauche. Cette plateforme n'a donc comme seul merite que d'exister, d'être clé en main et documentée.
