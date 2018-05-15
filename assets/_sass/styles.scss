@@ -362,14 +362,14 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     margin-left: auto;
     padding: 0 20px 20px 20px;
     width: inherit; 
-    }
-
+    
     @include media($mobile) {
         max-width: inherit;
         margin-right: inherit;
         margin-left: inherit;
         padding: inherit;
       }
+    }
 
     a {
       text-decoration: underline;
@@ -655,7 +655,6 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     margin-right: auto;
     margin-left: auto;
     padding: 20px;
-    }
 
     @include media($mobile) {
         max-width: inherit;
@@ -663,6 +662,7 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
         margin-left: inherit;
         padding: inherit;
       }
+    }
 
     h2 { 
       margin-bottom: 38px;
