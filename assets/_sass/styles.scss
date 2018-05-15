@@ -114,18 +114,23 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
   h3 {
     color: var(--dark);
     font-family: $serif;
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 700;
   }
 
   h4 {
     font-family: $serif;
-    font-size: 17px;
+    font-size: $size;
     font-weight: 700;
     line-height: 1.5em;
     color: var(--dark);
-    margin-bottom: 0;
-  }
+    margin-bottom: -1em; 
+
+      @include media($mobile) {
+        font-size: $sizemobile;
+        margin-bottom: -16px;
+      }
+    }
 
   h6 {
     font-family: $sans-serif;
@@ -360,8 +365,22 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     float: inherit;
     margin-right: auto;
     margin-left: auto;
-    padding: 0 20px 20px 20px;
+    padding: 0 20px 0px 20px;
     width: inherit; 
+
+    @include media($fitter) {
+      max-width: 80vw;
+      margin-right: inherit;
+      margin-left: inherit;
+      padding: inherit;
+      }
+
+    @include media($slimmer) {
+      max-width: inherit;
+      margin-right: inherit;
+      margin-left: inherit;
+      padding: inherit;
+      }
 
     @include media($mobile) {
         max-width: inherit;
@@ -469,7 +488,22 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
       left: -190px;
       transform: rotate(-90deg);
 
+      @include media($mobile) {
+        font-size: $sizemobile;
+        line-height: $line-heightmobile;
+        padding: 5px;
+        transform: rotate(0deg);
+        width: 100vw;
+        height: inherit;
+        position: absolute;
+        transform-origin: center;
+        right: inherit;
+        left: inherit;
+        text-align: center;
+        margin: inherit;
+      }
     }
+
     h3:hover {
       text-decoration: underline;
     }
@@ -556,22 +590,6 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
       margin: 0 3px 0 3px;
     }
 
-        /*
-    #menu_icon {
-      height: 14px;
-      width: 16px;
-      margin-bottom: 16px;
-      float: right;
-      color: var(--dark);
-      font-family: $sans-serif;
-      display: inline;
-      margin-left: 3px;
-      a {
-        display: block;
-        height: 100%;
-        width: 100%;
-      }
-*/
       .plays_index_anchor{
         width: 15px;
         height: 15px;
@@ -582,26 +600,9 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
       ul {
         display: none;
       }
-      
- /*     #menu_icon {
-        display: inline-block;
-      }*/
+
       .outer_container {
         padding: 0 20px;
-      }
-      h3 {
-        font-size: $sizemobile;
-        line-height: $line-heightmobile;
-        padding: 5px;
-        transform: rotate(0deg);
-        width: 100vw;
-        height: inherit;
-        position: absolute;
-        transform-origin: center;
-        right: inherit;
-        left: inherit;
-        text-align: center;
-        margin: inherit;
       }
     }
 
@@ -654,7 +655,21 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     float: inherit;
     margin-right: auto;
     margin-left: auto;
-    padding: 20px;
+    padding: 0 20px 0px 20px;
+
+    @include media($fitter) {
+      max-width: inherit;
+      margin-right: inherit;
+      margin-left: inherit;
+      padding: inherit;
+      }
+
+    @include media($slimmer) {
+      max-width: inherit;
+      margin-right: inherit;
+      margin-left: inherit;
+      padding: inherit;
+      }
 
     @include media($mobile) {
       max-width: inherit;
@@ -909,6 +924,7 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
 
     h2, h3, h4 {
       @include span-columns(9);
+      position: relative;
     }
     h3, h4 {
       // margin-top: 0px;
@@ -990,6 +1006,7 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
 
       h2, h3, h4, p, ol, ul {
        // @include span-columns(9);
+       position: relative;
       }
     }
     @include media($fitter) {
