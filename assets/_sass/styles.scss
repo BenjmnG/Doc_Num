@@ -363,12 +363,19 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     padding: 0 20px 20px 20px;
     width: inherit; 
     
-    @include media($mobile) {
+    @include media($slimmer) {
         max-width: inherit;
         margin-right: inherit;
         margin-left: inherit;
         padding: inherit;
       }
+
+    @include media($mobile) {
+        max-width: inherit;
+        margin-right: inherit;
+        margin-left: inherit;
+        padding: inherit;
+      }    
     }
 
     a {
@@ -656,11 +663,18 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     margin-left: auto;
     padding: 20px;
 
-    @include media($mobile) {
+    @include media($slimmer) {
         max-width: inherit;
         margin-right: inherit;
         margin-left: inherit;
         padding: inherit;
+      }
+
+    @include media($mobile) {
+      max-width: inherit;
+      margin-right: inherit;
+      margin-left: inherit;
+      padding: inherit;
       }
     }
 
@@ -771,16 +785,16 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     padding: 0 20px 0 40px;
     }
 
-      @include media($mobile) {
-        padding: 10px;
-        width: 100vw;
-        height: 33vh;
-        border-left: 0;
-        border-top: 1px solid var(--dark);
-        max-width: 100vw;
-        overflow-y: scroll;
-        bottom: 0;
-            }
+    @include media($mobile) {
+      padding: 10px;
+      width: 100vw;
+      height: 33vh;
+      border-left: 0;
+      border-top: 1px solid var(--dark);
+      max-width: 100vw;
+      overflow-y: scroll;
+      bottom: 0;
+          }
   }
     .side_container.side_opened{
       position: fixed;
