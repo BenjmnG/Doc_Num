@@ -837,7 +837,8 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
       @include media($mobile) {
         top: inherit;
         bottom: -33vh;
-        right: inherit;   
+        right: inherit;
+        display: none;   
       }
     }
 
@@ -875,7 +876,7 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
         @include media($mobile) {
           max-width: calc(100vw - 30px);
           width: 90vw;
-          margin-left: 0px;
+          margin-left: 10px;
         }
 
         @include media($slimmer) {
