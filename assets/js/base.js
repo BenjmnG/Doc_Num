@@ -185,10 +185,12 @@
         clearReference.call(this);
     });
 
+    /*
     $(document).ready(
       function(){
         sortFootnote();
       });
+    */
 
 //});
 
