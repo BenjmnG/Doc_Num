@@ -85,16 +85,17 @@
 
 };
 
+/*
   function sortFootnote(){
     var i = 0;
     var PreSerial2 = $(footnote).attr("href");
     var Serial2 = PreSerial2.replace("#","");
     
     for(footnote){
-      if (Serial2.match(/\d+$/)) { /* show side content */
+      if (Serial2.match(/\d+$/)) {
       $(footnote).addClass('fn_digit');
 
-      } else if (Serial2.match(/[a-zA-Z]$/)) { /* show reference */
+      } else if (Serial2.match(/[a-zA-Z]$/)) {
       $(footnote).addClass('fn_aleph');
 
       } else {
@@ -103,6 +104,7 @@
       return false;
     };
   };
+  */
 
 
 
