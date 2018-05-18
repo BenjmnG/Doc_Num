@@ -842,11 +842,7 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
       }
     }
 
-    .side_container.inner_container
-      @include media($mobile) {
-        padding-top: 15px;  
-      }
-    }
+
 
 
     #plays.side_closed {
