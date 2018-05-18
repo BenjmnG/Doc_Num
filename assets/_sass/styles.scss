@@ -194,15 +194,15 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     margin-left: 4px;
     margin-right: 2px;*/
     font-size: 0px;
+    font-feature-settings: "ornm" 1;
   }
 
   .footnote::after {
     content: "÷";
     font-size: inherit;
-    font-size: $size;
+    font-size: 20px;
       
       @include media($mobile) {
-        font-size: $sizemobile;
       }
   }
 
