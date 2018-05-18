@@ -52,8 +52,6 @@
 
     var url = document.location.host
 
-    //  alert(Serial)
-     //   alert(firstDivContent);
     
     if (Serial.match(/\d+$/)) { /* show side content */
       open_side();
@@ -68,13 +66,6 @@
        .replace(/↩/i, ''); // Erase ↩ glyphe
       var ExitRef = '<svg class="ExitRef" viewBox="0 0 14 14" data-name="b74ec648-29e4-4aaf-a657-5e8a97fa58ca" xmlns="http://www.w3.org/2000/svg"><title>Index</title><path d="M7,0a7,7,0,1,0,7,7A7,7,0,0,0,7,0Zm.71,7,3.87-3.87a6,6,0,0,1,0,7.74Zm3.16-4.58L7,6.29,3.13,2.42a6,6,0,0,1,7.74,0Zm-8.45.71L6.29,7,2.42,10.87a6,6,0,0,1,0-7.74Zm.71,8.45L7,7.71l3.87,3.87a6,6,0,0,1-7.74,0Z"/>'
 
-      /*$ (this).parent()
-      .text(" " + getSerialContenttoRef+ " ") // Insert Text Reference
-      .append(ExitRef + " ") // Add Close button at the end
-      .attr("footnoteID", PreSerial) // Store footnote #href
-      .addClass("Referenced"); // Add specefic class to global div
-      //.attr('onclick', 'clearReference.call("this")');
-      */
       var parent = $(this).parent();
       parent.replaceWith( "<span class='referenced' footnoteID='"
             + PreSerial 
@@ -93,6 +84,27 @@
     return false;
 
 };
+
+  function sortFootnote(){
+    var i = 0;
+    var PreSerial2 = $(footnote).attr("href");
+    var Serial = PreSerial2.replace("#","");
+    
+    for(footnote){
+      if (Serial.match(/\d+$/)) { /* show side content */
+      $(footnote).addClass('fn_digit');
+
+      } else if (Serial.match(/[a-zA-Z]$/)) { /* show reference */
+      $(footnote).addClass('fn_aleph');
+
+      } else {
+      }
+
+      return false;
+    };
+  };
+
+
 
   function clearInnerSide(){
     // delete firstDivContent;
