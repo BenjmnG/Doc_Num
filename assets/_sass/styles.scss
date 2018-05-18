@@ -957,7 +957,6 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
        white-space: -pre-wrap;      /* Opera 4-6 */
        white-space: -o-pre-wrap;    /* Opera 7 */
        word-wrap: break-word;       /* Internet Explorer 5.5+ */
-
        margin-left: 3em;
         }
 
@@ -1089,7 +1088,7 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
     line-height: 1.5em;
     font-size: 12px;
     margin-left: 16.5%;
-    margin-right: 16.5%
+    margin-right: 16.5%;
   }
 
   #plays_index {
@@ -1138,5 +1137,6 @@ $fitter: new-breakpoint(min-width 981px max-width 1280px 12);
   .button {
     display: none;
   }
+}
 }
 
