@@ -88,17 +88,17 @@
   function sortFootnote(){
     var i = 0;
     var PreSerial2 = $(footnote).attr("href");
-    var Serial = PreSerial2.replace("#","");
+    var Serial2 = PreSerial2.replace("#","");
     
     for(footnote){
-      if (Serial.match(/\d+$/)) { /* show side content */
+      if (Serial2.match(/\d+$/)) { /* show side content */
       $(footnote).addClass('fn_digit');
 
-      } else if (Serial.match(/[a-zA-Z]$/)) { /* show reference */
+      } else if (Serial2.match(/[a-zA-Z]$/)) { /* show reference */
       $(footnote).addClass('fn_aleph');
 
       } else {
-      }
+      };
 
       return false;
     };
